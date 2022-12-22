@@ -55,6 +55,7 @@
 		led2 = &red_led_5;
 		led3 = &blue_led_6;
 		sw0 = &user_button;
+                cnt5 = &counter5;
 	};
 };
 
@@ -105,6 +106,14 @@
 		status = "okay";
 		pinctrl-0 = <&tim2_ch1_pa0>;
 		pinctrl-names = "default";
+	};
+};
+
+&timers5 {
+        status = "okay";
+        //st,countermode = <STM32_TIM_COUNTERMODE_UP>;
+	counter5: counter {
+		status = "okay";
 	};
 };
 
