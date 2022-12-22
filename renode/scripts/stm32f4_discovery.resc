@@ -3,7 +3,7 @@
 
 using sysbus
 
-set bin $CWD/../build/zephyr/zephyr.elf
+set bin $CWD/build/zephyr/zephyr.elf
 
 $name?="STM32F4_Discovery"
 mach create $name

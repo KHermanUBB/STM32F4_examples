@@ -80,9 +80,30 @@ ln -s TestApplication.c main.c
 
 ### Renode
 
-start renode in renode directory 
+start renode 
 
 ```shell
-i @scripts/stm32f4_discovery.resc 
+i @renode/scripts/stm32f4_discovery.resc 
 start
 ``` 
+
+### HelloWorld.c example
+
+Compile the applicationa and run renode
+
+```shell
+i @renode/scripts/stm32f4_discovery.resc 
+start
+``` 
+observe the output 
+
+### PressButton.c example
+
+Compile the applicationa and run renode
+
+```shell
+i @renode/scripts/stm32f4_discovery.resc 
+start
+gpioPortA.UserButton PressAndRelease 
+``` 
+
