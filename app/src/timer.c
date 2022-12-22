@@ -15,8 +15,16 @@
 
 struct counter_alarm_cfg alarm_cfg;
 
+
+/* DT_ALIAS uses aliases defined in the DTS*/
 #define TIMER DT_ALIAS(cnt5)
+/* DT_NODELABEL uses nodelabels defined in the DTS*/
 //#define TIMER DT_NODELABEL(counter5)
+
+/* Notification during compilation */
+#if !DT_NODE_EXISTS(TIMER)
+#error "timer node does not exist"
+#endif
 
 static void test_counter_interrupt_fn(const struct device *counter_dev,
 				      uint8_t chan_id, uint32_t ticks,
@@ -55,9 +63,7 @@ static void test_counter_interrupt_fn(const struct device *counter_dev,
 	}
 }
 
-#if !DT_NODE_EXISTS(TIMER)
-#error "timer node does not exist"
-#endif
+
 
 void main(void)
 {
