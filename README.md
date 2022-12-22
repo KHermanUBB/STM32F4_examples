@@ -108,3 +108,45 @@ start
 gpioPortA.UserButton PressAndRelease 
 ``` 
 
+### timer.c example
+
+Compile the applicationa and run renode
+
+```shell
+i @renode/scripts/stm32f4_discovery.resc 
+start
+``` 
+In the prj.conf the following modules were added
+
+```shell
+CONFIG_COUNTER=y
+CONFIG_COUNTER_INIT_PRIORITY=50
+CONFIG_COUNTER_TIMER_STM32=y
+```
+In the main DTS file the timer5 was activated in upcounter mode
+
+```shell
+&timers5 {
+        status = "okay";
+        //st,countermode = <STM32_TIM_COUNTERMODE_UP>;
+        counter5: counter {
+                status = "okay";
+        };
+};
+```
+respective alias was also added
+
+```shell
+        aliases {
+                led0 = &green_led_4;
+                led1 = &orange_led_3;
+                led2 = &red_led_5;
+                led3 = &blue_led_6;
+                sw0 = &user_button;
+                cnt5 = &counter5;
+        };
+
+```
+
+
+
