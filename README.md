@@ -49,27 +49,19 @@ west init -m https://github.com/zephyrproject-rtos/example-application --mr main
 cd my-workspace
 west update
 ```
+```shell
+vi .west/config
+change path to STM32F4_examples
+
+```
 
 ### Build & Run
 
 The application can be built by running:
 
 ```shell
-west build -b $BOARD app
+west build -b stm32f4_disco app
 ```
-
-where `$BOARD` is the target board. The `custom_plank` board found in this
-repository can be used. Note that Zephyr sample boards may be used if an
-appropriate overlay is provided (see `app/boards`).
-
-A sample debug configuration is also provided. You can apply it by running:
-
-```shell
-west build -b $BOARD app -- -DOVERLAY_CONFIG=debug.conf
-```
-
-Note that you may also use it together with `rtt.conf` if using Segger RTT. Once
-you have built the application you can flash it by running:
 
 ```shell
 west flash
