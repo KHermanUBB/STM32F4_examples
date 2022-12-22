@@ -66,3 +66,14 @@ west build -b stm32f4_disco app
 ```shell
 west flash
 ```
+
+### USART2
+The USART2 is used as a Zephyr terminal on PA2-TX and PA3-RX. Baudrate 115200
+
+### Test applications
+
+Use sumbolic link in app/src to point to the actual application ie. 
+
+```shell
+ln -s TestApplication.c main.c
+```
