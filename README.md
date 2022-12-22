@@ -60,6 +60,7 @@ change path to STM32F4_examples
 The application can be built by running:
 
 ```shell
+cd STM32F4_example
 west build -b stm32f4_disco app
 ```
 
