@@ -22,6 +22,8 @@ static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
 void main(void)
 {
 	int ret;
+	int i;
+	i = 0;
 
 	if (!device_is_ready(led.port)) {
 		return;
@@ -37,7 +39,7 @@ void main(void)
 		if (ret < 0) {
 			return;
 		}
-		printk("Hello \n");
+		printk("Hello %d \n", i++);
 		k_msleep(SLEEP_TIME_MS);
 	}
 }

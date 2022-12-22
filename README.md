@@ -72,8 +72,17 @@ The USART2 is used as a Zephyr terminal on PA2-TX and PA3-RX. Baudrate 115200
 
 ### Test applications
 
-Use sumbolic link in app/src to point to the actual application ie. 
+Use symbolic link in app/src to point to the actual application ie. 
 
 ```shell
 ln -s TestApplication.c main.c
 ```
+
+### Renode
+
+start renode in renode directory 
+
+```shell
+i @scripts/stm32f4_discovery.resc 
+start
+``` 
