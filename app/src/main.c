@@ -1,1 +1,1 @@
-timer.c
+philosophers.c
