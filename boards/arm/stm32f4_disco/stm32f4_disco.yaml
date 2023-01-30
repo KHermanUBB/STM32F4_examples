@@ -13,3 +13,5 @@ supported:
   - pwm
   - counter
   - usb
+  - i2c
+  - vl530l0x
