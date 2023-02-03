@@ -10,9 +10,9 @@ ram: 128
 flash: 1024
 supported:
   - can
-  - adc
   - pwm
   - counter
   - usb
   - i2c
   - vl530l0x
+  - spi

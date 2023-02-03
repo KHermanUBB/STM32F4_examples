@@ -23,5 +23,3 @@ CONFIG_CLOCK_CONTROL=y
 
 # enable pin controller
 CONFIG_PINCTRL=y
-
-CONFIG_ADC=y
