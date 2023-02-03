@@ -1,1 +1,1 @@
-adc.c
+prueba.c
