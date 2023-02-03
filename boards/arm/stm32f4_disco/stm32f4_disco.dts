@@ -61,7 +61,7 @@
 	};
 	
 	zephyr,user {
-        io-channels = <&adc1 0>;
+        io-channels = <&adc1 8>;
     	};
 
 };
@@ -175,8 +175,8 @@ zephyr_udc0: &usbotg_fs {
 	pinctrl-names = "default";
 	status = "okay";
 
-	channel@0 {
-		reg = <0>;
+	channel@8 {
+		reg = <8>;
 		zephyr,gain = "ADC_GAIN_1";
 		zephyr,reference = "ADC_REF_INTERNAL";
                 zephyr,acquisition-time = <0>;
