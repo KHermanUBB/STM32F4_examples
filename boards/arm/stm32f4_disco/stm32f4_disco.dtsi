@@ -1,0 +1,12 @@
+/*
+ * Copyright (c) 2017 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&pinctrl {
+   	adc1_in_pb0_default: adc1_in_pb0_default {
+		pinmux = <STM32_PINMUX('B', 0, ANALOG)>;
+	};
+
+};

@@ -5,8 +5,10 @@
  */
 
 /dts-v1/;
+#include <dt-bindings/adc/adc.h>
 #include <st/f4/stm32f407Xg.dtsi>
 #include <st/f4/stm32f407v(e-g)tx-pinctrl.dtsi>
+#include "stm32f4_disco.dtsi"
 
 / {
 	model = "STMicroelectronics STM32F4DISCOVERY board";
@@ -57,6 +59,11 @@
 		sw0 = &user_button;
                 cnt5 = &counter5;
 	};
+	
+	zephyr,user {
+        io-channels = <&adc1 0>;
+    	};
+
 };
 
 &usart1 {
@@ -158,5 +165,24 @@ zephyr_udc0: &usbotg_fs {
 		reg = <0x29>;
 		xshut-gpios = <&gpioc 6 GPIO_ACTIVE_HIGH>;
 	};
+};
+
+&adc1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	pinctrl-0 = <&adc1_in_pb0_default>;
+	pinctrl-names = "default";
+	status = "okay";
+
+	channel@0 {
+		reg = <0>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+                zephyr,acquisition-time = <0>;
+		zephyr,resolution = <12>;
+		 
+	};
+	
 };
 

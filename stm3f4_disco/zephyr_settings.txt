@@ -1,0 +1,16 @@
+# WARNING. THIS FILE IS AUTO-GENERATED. DO NOT MODIFY!
+#
+# This file contains build system settings derived from your modules.
+#
+# Modules may be set via ZEPHYR_MODULES, ZEPHYR_EXTRA_MODULES,
+# and/or the west manifest file.
+#
+# See the Modules guide for more information.
+"BOARD_ROOT":"/home/krzysztof/os_workspace/STM32F4_examples"
+"DTS_ROOT":"/home/krzysztof/os_workspace/STM32F4_examples"
+"DTS_ROOT":"/home/krzysztof/os_workspace/modules/hal/atmel"
+"DTS_ROOT":"/home/krzysztof/os_workspace/modules/hal/espressif"
+"DTS_ROOT":"/home/krzysztof/os_workspace/modules/hal/gigadevice"
+"DTS_ROOT":"/home/krzysztof/os_workspace/modules/hal/nuvoton"
+"DTS_ROOT":"/home/krzysztof/os_workspace/modules/hal/nxp"
+"DTS_ROOT":"/home/krzysztof/os_workspace/modules/hal/stm32"
