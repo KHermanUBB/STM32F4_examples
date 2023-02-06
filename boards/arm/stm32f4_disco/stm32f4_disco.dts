@@ -170,19 +170,20 @@ zephyr_udc0: &usbotg_fs {
 &adc1 {
 	#address-cells = <1>;
 	#size-cells = <0>;
-
 	pinctrl-0 = <&adc1_in_pb0_default>;
 	pinctrl-names = "default";
+        dmas = <&dma2 5 3 0x4532 0x32>;
 	status = "okay";
-
 	channel@8 {
 		reg = <8>;
 		zephyr,gain = "ADC_GAIN_1";
 		zephyr,reference = "ADC_REF_INTERNAL";
                 zephyr,acquisition-time = <0>;
 		zephyr,resolution = <12>;
-		 
 	};
-	
 };
+
+&dma2 {
+        status = "ok";
+                };
 
