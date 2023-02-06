@@ -4,8 +4,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/*
+ * PA0 -> ADC1-CH0
+ * PA1 -> ADC1-CH1
+ * PA2 -> ADC1-CH2
+ * PB0 -> ADC1-CH8
+ */
+
 &pinctrl {
-   	adc1_in_pb0_default: adc1_in_pb0_default {
+	
+   	adc1_ch1: adc1_ch1 {
+		pinmux =  <STM32_PINMUX('A', 1, ANALOG)>;
+	};
+ 
+  	adc1_ch8: adc1_ch8{
 		pinmux = <STM32_PINMUX('B', 0, ANALOG)>;
 	};
 

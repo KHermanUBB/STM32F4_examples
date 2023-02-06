@@ -57,11 +57,11 @@
 		led2 = &red_led_5;
 		led3 = &blue_led_6;
 		sw0 = &user_button;
-                cnt5 = &counter5;
+        cnt5 = &counter5;
 	};
 	
 	zephyr,user {
-        io-channels = <&adc1 8>;
+		io-channels = <&adc1 1>, <&adc1 8>;
     	};
 
 };
@@ -170,17 +170,31 @@ zephyr_udc0: &usbotg_fs {
 &adc1 {
 	#address-cells = <1>;
 	#size-cells = <0>;
-	pinctrl-0 = <&adc1_in_pb0_default>;
+	pinctrl-0 = <&adc1_ch1 &adc1_ch8>;
 	pinctrl-names = "default";
-        dmas = <&dma2 5 3 0x4532 0x32>;
+    dmas = <&dma2 5 3 0x4532 0x32>;
 	status = "okay";
+
+
+	channel@1 {
+		reg = <1>;
+		zephyr,gain = "ADC_GAIN_1";
+		zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <0>;
+		zephyr,resolution = <12>;
+	};
+
+
+
 	channel@8 {
 		reg = <8>;
 		zephyr,gain = "ADC_GAIN_1";
 		zephyr,reference = "ADC_REF_INTERNAL";
-                zephyr,acquisition-time = <0>;
+        zephyr,acquisition-time = <0>;
 		zephyr,resolution = <12>;
 	};
+
+
 };
 
 &dma2 {
