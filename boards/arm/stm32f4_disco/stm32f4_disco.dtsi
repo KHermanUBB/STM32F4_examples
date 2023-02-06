@@ -12,8 +12,12 @@
  */
 
 &pinctrl {
-   	adc1_inputs: adc1_inputs {
-		pinmux = <STM32_PINMUX('A', 0, ANALOG)>, <STM32_PINMUX('B', 0, ANALOG)>;
+   	adc1_ch0: adc1_ch0 {
+		pinmux = <STM32_PINMUX('A', 0, ANALOG)>;
+	};
+
+   	adc1_ch8: adc1_ch8{
+		pinmux = <STM32_PINMUX('B', 0, ANALOG)>;
 	};
 
 };

@@ -61,7 +61,7 @@
 	};
 	
 	zephyr,user {
-        io-channels = <&adc0 1>, <&adc1 8>;
+        io-channels = <&adc1 0>, <&adc1 8>;
     	};
 
 };
@@ -170,7 +170,7 @@ zephyr_udc0: &usbotg_fs {
 &adc1 {
 	#address-cells = <1>;
 	#size-cells = <0>;
-	pinctrl-0 = <&adc1_in_pb0_default>;
+	pinctrl-0 = <&adc1_ch0>, <&adc1_ch8>;
 	pinctrl-names = "default";
         dmas = <&dma2 5 3 0x4532 0x32>;
 	status = "okay";
