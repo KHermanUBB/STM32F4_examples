@@ -13,8 +13,8 @@
 	compatible = "st,stm32f4discovery";
 
 	chosen {
-		zephyr,console = &usart2;
-		zephyr,shell-uart = &usart2;
+		zephyr,console = &usart1;
+		zephyr,shell-uart = &usart1;
 		zephyr,sram = &sram0;
 		zephyr,flash = &flash0;
 		zephyr,ccm = &ccm0;
@@ -147,6 +147,7 @@ zephyr_udc0: &usbotg_fs {
 	status = "okay";
 };
 
+/*
 &i2c2 {
 	pinctrl-0 = <&i2c2_scl_pb10 &i2c2_sda_pb11>;
 	pinctrl-names = "default";
@@ -165,5 +166,10 @@ zephyr_udc0: &usbotg_fs {
                 status = "okay";
                 int-gpios = <&gpioc 13 GPIO_ACTIVE_HIGH>;
         };	
+	
+};
+*/
 
+&rng {
+    status = "okay";
 };
