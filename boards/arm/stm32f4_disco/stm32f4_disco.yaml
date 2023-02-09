@@ -16,4 +16,6 @@ supported:
   - i2c
   - vl530l0x
   - spi
-  - netif:eth
+  - lora
+  - gpio
+  - uart
